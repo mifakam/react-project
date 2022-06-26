@@ -3,7 +3,13 @@ import React, { useEffect } from "react";
 const Main = (props) => {
   useEffect(() => {
     console.log("useEffect");
-  });
+    setTimeout(() => {
+      console.log("HTTP Request!");
+    }, 2000);
+    return () => {
+      console.log("Main.js CleanUp");
+    };
+  }, []);
 
   const btn = {
     backgroundColor: "#7b1fa2",

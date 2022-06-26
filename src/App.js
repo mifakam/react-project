@@ -16,6 +16,7 @@ class App extends Component {
       { id: 3, title: "book3", price: "8" },
     ],
     showProducts: false,
+    showMain: true,
   };
 
   componentDidMount() {
@@ -73,7 +74,18 @@ class App extends Component {
     }
     return (
       <div className="center">
-        <Main click={this.toggleProductHandler} />
+        <button
+          onClick={() => {
+            this.setState({ showMain: false });
+          }}>
+          Remove Main
+        </button>
+        {this.state.showMain ? (
+          <Main
+            products={this.state.products}
+            click={this.toggleProductHandler}
+          />
+        ) : null}
         {products}
       </div>
     );
