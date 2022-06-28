@@ -16,6 +16,10 @@ class ProductList extends Component {
     console.log("productList  componentDidUpdate");
   }
 
+  componentWillUnmount() {
+    console.log("productList  componentWillUnmount");
+  }
+
   render() {
     return this.props.products.map((item, index) => {
       return (
